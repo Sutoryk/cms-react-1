@@ -1,9 +1,11 @@
 import { Component, React } from 'react';
 import { KATEGORIE } from '../shared/kategorie';
-import { Breadcrumb, BreadcrumbItem, Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, CardHeader, ListGroup, ListGroupItem } from 'reactstrap';
-import Zlaczki from '../CategoryComponents/zlaczkicomponent';
-import { ZLACZKI } from '../shared/zlaczki';
+import {Button, Breadcrumb, BreadcrumbItem, Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, CardHeader, ListGroup, ListGroupItem } from 'reactstrap';
+import Featured from './Featuredcomponent';
+import { FEATURED } from '../shared/featured';
 import {Link} from 'react-router-dom';
+import { ZLACZKI } from '../shared/zlaczki';
+import Zlaczki from './Featuredcomponent';
 
 
 class Main extends Component {
@@ -11,8 +13,8 @@ class Main extends Component {
         super(props);
         this.state = {
             kategorie: KATEGORIE,
-            zlaczki: ZLACZKI,
-            categorySelected: null
+            categorySelected: null,
+            featured: FEATURED,
 
         }
     }
@@ -21,33 +23,23 @@ class Main extends Component {
         this.setState({ categorySelected: kategoria });
     }
 
-    renderDish(kategoria) {
-        if (kategoria != null)
-            return (
-                <Card>
-                    <Link to={`/kategoria/${kategoria.name}`}>
-                    <CardBody>
-                        <CardTitle>{kategoria.name}</CardTitle>
-                    </CardBody>
-                    </Link>
-                </Card>
-            );
-        else
-            return (
-                <div></div>
-            );
-    }
-
-
 
     render() {
         const menu = this.state.kategorie.map((kategoria) => {
             return (
-                <Card key={kategoria.id} onClick={() => this.onDishSelect(kategoria)}>
+                <Card key={kategoria.id} onClick={() => this.onDishSelect(kategoria) }style={{
+                    width:'20rem',
+                    height:'15rem'
+                }}>
                     <CardBody>
                         {kategoria.name}
                     </CardBody>
-
+                    <Button color="light">
+                    <Link to={`/kategoria/${kategoria.name}`}>
+                        Przegladaj
+                        </Link>
+                    </Button>
+                    
                 </Card>
 
             )
@@ -55,19 +47,20 @@ class Main extends Component {
         return (
             <div className="container">
                 <div className="row row-content">
-                    <div className='col-12 col-sm-4 border'>
+                    <div class="offset-sm-4">
                         <CardHeader className="">
                             Kategorie
                         </CardHeader>
+                        </div>
                         {menu}
-                        {this.renderDish(this.state.categorySelected)}
-                    </div>
-                    <div className='col-12 col-sm-8 '>
-                        <CardHeader className="">
-                            produkty
+                    <div className='row row-content'>
+                    <div className='col-12 col-sm-12 '>
+                        <CardHeader>
+                            Promowane produkty
                         </CardHeader>
 
-                        <Zlaczki zlaczki={this.state.zlaczki} />
+                    <Featured featured={this.state.featured}/>
+                    </div>
                     </div>
                 </div>
             </div>

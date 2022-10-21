@@ -1,9 +1,9 @@
 export const KATEGORIE=
 [
     {id: 1,
-    name: "wężę"},
+    name: "First Category"},
     {id: 2,
-    name: "zraszacze"},
+    name: "Second category"},
     {id: 3,
-    name: "złączki"}
+    name: "Third Category"}
 ];

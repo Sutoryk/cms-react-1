@@ -3,7 +3,7 @@ import {Breadcrumb, BreadcrumbItem, Card, CardImg, CardImgOverlay, CardText, Car
 import { ZLACZKI } from '../shared/zlaczki';
 
 
-class Zlaczki extends Component{
+class Featured extends Component{
     constructor(props){
         super(props);
     
@@ -11,16 +11,16 @@ class Zlaczki extends Component{
 } 
 
 render(){
-    const zlaczki = this.props.zlaczki.map((zlaczka)=>{
+    const featured = this.props.featured.map((item)=>{
         return(
             <Card style={{
-                width:'15rem',
-                height:'2rem'
+                width:'20rem',
+                height:'15rem'
             }}
             className="justify-content-center"
             >  
             <CardBody>
-                    {zlaczka.name}
+                    {item.name}
             </CardBody>
 
             </Card>
@@ -30,15 +30,12 @@ render(){
     return(
         <div className='container'>
                 <div className='row'>
-                        {zlaczki}
+                        {featured}
                 </div>
                 </div>
     )
 }
 
-
-
-
 }
+export default Featured;
 
-export default Zlaczki;
