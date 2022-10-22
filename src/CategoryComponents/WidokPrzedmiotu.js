@@ -1,7 +1,8 @@
 import { React,Component } from "react";
 import {Breadcrumb, BreadcrumbItem} from "reactstrap";
 import {Link} from 'react-router-dom';
-class ZlaczkiWidok extends Component{
+
+class WidokPrzedmiotu extends Component{
 
     render(){
         return(
@@ -18,4 +19,4 @@ class ZlaczkiWidok extends Component{
         )
     }
 }
-export default ZlaczkiWidok;
+export default WidokPrzedmiotu;

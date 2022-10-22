@@ -88,7 +88,7 @@ class Header extends Component {
                         
                     </div>
                     <NavbarBrand className='offset-md-3'>
-                            <Input type="password" id="password" name="password"
+                            <Input type="text" id="text" name="text"
                             innerRef={(input)=>this.password=input}/>
                 </NavbarBrand>
                     <Nav className="offset-md-2" navbar>
@@ -133,7 +133,7 @@ class Header extends Component {
             <Navbar xl='12' className='secondary-navbar d-none d-xl-block' expand="md">
                 <Nav navbar>
                 <div className='offset-sm-1'>
-                    <NavItem>Second bar</NavItem>
+                    <NavItem> </NavItem>
                     </div>
                 </Nav>
             </Navbar>

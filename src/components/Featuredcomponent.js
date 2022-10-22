@@ -1,19 +1,41 @@
-import {React,Component} from 'react';
-import {Breadcrumb, BreadcrumbItem, Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle, CardHeader, ListGroup, ListGroupItem} from 'reactstrap';
-import { ZLACZKI } from '../shared/zlaczki';
-
+import {React,Component,Button} from 'react';
+import { Link } from 'react-router-dom';
+import {Breadcrumb, BreadcrumbItem, Card, CardImg, CardImgOverlay,
+     CardText, CardBody, CardTitle, CardHeader, ListGroup, ListGroupItem, CardFooter} from 'reactstrap';
 
 class Featured extends Component{
     constructor(props){
         super(props);
+        this.state={
+            items:[
+                {
+                    "id":1,
+                    "item": "First item",
+                    "description": "Description of the first item"
+                },
+                {
+                    "id":2,
+                    "item": "Second item",
+                    "description": "Description of the Second item"
+                },
+                {
+                    "id":3,
+                    "item": "Third item",
+                    "description": "Description of the Third item"
+                },
+            ]
+        }
     
 
 } 
 
+
+
 render(){
+    
     const featured = this.props.featured.map((item)=>{
         return(
-            <Card style={{
+            <Card key={item.id} style={{
                 width:'20rem',
                 height:'15rem'
             }}
@@ -22,6 +44,11 @@ render(){
             <CardBody>
                     {item.name}
             </CardBody>
+                    <Link to={`/kategoria/${item.name}`}>
+                       <button style={{ 'color': 'blue', 'backgroundColor': 'white', 'border': 'none'}}>
+                        Przegladaj
+                       </button>
+                        </Link>                    
 
             </Card>
         )

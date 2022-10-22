@@ -4,11 +4,8 @@ import Header from './components/HeaderComponent';
 import Footer from './components/FooterComponent';
 import React from 'react';
 import { BrowserRouter, Route,Routes} from 'react-router-dom';
-import Test from './CategoryComponents/ZlaczkiWidokComponent';
-import ZlaczkiWidok from './CategoryComponents/ZlaczkiWidokComponent';
-import WezeWidok from './CategoryComponents/WezeWidokComponent';
-import ZraszaczeWidok from './CategoryComponents/ZraszaczeWidokComponent';
 import Kontakt from './components/KontaktComponent';
+import WidokPrzedmiotu from './CategoryComponents/WidokPrzedmiotu';
 
 function App() {
   return (
@@ -18,9 +15,9 @@ function App() {
     <Routes>
       <Route path="/" element={<Main/>}></Route>
       <Route path="/home" element={<Main />}></Route>
-      <Route exact path="/kategoria/złączki" element={<ZlaczkiWidok />}></Route>
-      <Route exact path="/kategoria/węże" element={<WezeWidok />}></Route>
-      <Route exact path="/kategoria/zraszacze" element={<ZraszaczeWidok />}></Route>
+      <Route exact path="/kategoria/First category" element={<WidokPrzedmiotu />}></Route>
+      <Route exact path="/kategoria/Second category" element={<WidokPrzedmiotu />}></Route>
+      <Route exact path="/kategoria/Third category" element={<WidokPrzedmiotu />}></Route>
       <Route path="/aboutus" element={<Kontakt />}></Route>
 
       

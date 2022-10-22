@@ -1,11 +1,11 @@
 export const FEATURED=
 [
     {id: 1,
-    name:"First category"},
+    name:"First item"},
     {id: 2,
-        name:"Second Category"},
+        name:"Second item"},
     {id: 3,
-    name:"Third Category"}
+    name:"Third item"}
 
     
 ];
